@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.header {
+
+  display: block;
+ 
+  width: 100%;
+
+  text-align: right;
+
+  background-color: rgba(0,0,0,0.8);  
+}
+
+.header > input, 
+.header > label 
+{
+
+  display: none;
+}
+
+.header > .nav {
+ 
+  display: inline-block;
+
+  width: 100%;
+
+  padding: 16px;
+}
+
+.header > .nav > .quick-access {
+
+  display: inline-block;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+.header > .nav > .quick-access > li
+{
+
+  display: inline-block;
+
+  padding: 0 30px;
+}
+
+.header > .nav > .quick-access > li > a
+{
+
+  color: white;
+
+  font-family: garamond;
+  font-size: 100%;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.header > .nav > .quick-access > li > a:hover{
+  color: rgb(255, 209, 26);
+  font-size: 105%;
+}
+
+
+@media (max-width: 700px) {
+  
+  .header > #nav + label + .nav {
+
+    display: none;
+
+    width: 320px;
+    padding: 16px;
+    
+    background-color: lightgrey;
+  }
+
+
+  .header > #nav:checked + label + .nav {
+
+    display: block;
+  }
+
+ 
+  .header > .nav > .quick-access {
+
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+    border: 1px dotted grey;
+
+    border-width: 0 0 1px 0;
+  }
+
+  .header > .nav > .quick-access > li {
+
+    display: inline-block;
+
+    margin: 0 4px 16px 4px;
+  }
+
+
+  .header > .nav {
+
+    position: absolute;
+
+    top: 48px;
+    right: 0;
+
+    z-index: 100;
+
+    text-align: center;
+  }   
+
+
+  .header > label {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    padding: 16px;
+
+    color: white;
+  }
+
+
+  .header > .nav > .quick-access > li > a
+  {
+    color: black;
+  }
+}
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* rset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.slideshow {
+/* TODO set the whole slidshow as a block */
+  display: block;
+/* TODO set it as 100% wide and 840px high   */
+  width: 100%;
+  height: 1500px;
+/* TODO use "position: relative" to choose slideshow tag as coordinate origin for labels so they can be positioned on top of slide  */
+  position: relative;
+/* hide anything beyond the border */
+  overflow: hidden;
+}
+
+.slide {
+/* TODO hide all slides using display: none   */
+  display: none;
+/* TODO set 100% wide and 100% high for each slide   */
+  width: 100%;
+  height: 100%;
+/* hide anything beyond the border   */
+  overflow: hidden;
+}
+
+.slideshow > input {
+/* TODO hide radio button, instead we will use label to check/uncheck it, using display: none; */
+  display: none;
+}
+
+.slideshow > input:checked + label + .slide {
+/* TODO only show slide if the radio button in front of it is checked, using :checked selector and display: block; */
+  display: block;
+}
+
+.slideshow > label {
+/* TODO use display: inline-block so labels will be side by side and share the row   */
+  display: inline-block;
+/* TODO set width and height to be 8px so it looks like a small square button   */
+  width: 8px;
+  height: 8px;
+/* TODO set label position: absolute and use bottome: 140px so they will be placed on top of slides at the bottom part of slideshow  */
+  position: absolute;
+  bottom: 140px;
+/* TODO set z-index: 100, so it will be on top of the slides instead of behind them   */
+  z-index: 100;
+/* make button lightgrey even it has no text content   */
+  background-color: lightgrey;
+}
+
+/* highlight checked button */
+.slideshow > input:checked + label {
+  background-color: white;
+}
+
+/* set differnt left: value to make labels position horizontally */
+.slideshow > label:nth-of-type(1) {
+  left: 60px;
+}
+.slideshow > label:nth-of-type(2) {
+/* TODO set a differnt left value */
+  left: 80px;
+}
+.slideshow > label:nth-of-type(3) {
+/* TODO set a differnt left value */
+  left: 100px;
+}
+
+/* set video and img inside of slideshow to be 100% high of its parent and hide anything outside of its border */
+.slide video, .slide img {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide > span {
+/* TODO set title to be 300px wide   */
+  width: 300px;
+/* TODO use absolute position to place title text 440px from bottom and 60px from left   */
+  position: absolute;
+  bottom: 440px;
+  left: 60px;
+/* set text color and font size   */
+  color: gold;
+  font-size: 280%;
+}
+
+/* make the link as a square box */
+.slide > a {
+/* TODO set display: block;   */
+  display: block;
+/* TODO make it 104px wide and high   */
+  width: 104px;
+  height: 104px;
+/* TODO make 14px padding   */
+  padding: 14px;
+/* TODO add 5px solid white border   */
+  border: 5px solid white;
+/* TODO use absolute position to place it 220px from bottom and 60px from left   */
+  position: absolute;
+  bottom: 220px;
+  left: 60px;
+/* set font and text style   */
+  color: white;
+  font-family: sans-serif;
+  font-size: 120%;
+  text-decoration: none;
+  text-align: center;
+}
+.slide > a:hover{
+  color: lightblue;
+  border: 5px solid lightblue;
+  font-size: 150%
+}
